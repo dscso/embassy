@@ -31,7 +31,7 @@ defmt = ["dep:defmt", "smoltcp/defmt", "embassy-net-driver/defmt", "heapless/def
 ## Trace all raw received and transmitted packets using defmt or log.
 packet-trace = []
 
-#! Many of the following feature flags are re-exports of smoltcp feature flags. See 
+#! Many of the following feature flags are re-exports of smoltcp feature flags. See
 #! the [smoltcp feature flag documentation](https://github.com/smoltcp-rs/smoltcp#feature-flags)
 #! for more details
 
@@ -63,14 +63,14 @@ igmp = ["smoltcp/proto-igmp"]
 defmt = { version = "0.3", optional = true }
 log = { version = "0.4.14", optional = true }
 
-smoltcp = { version = "0.11.0", default-features = false, features = [
+smoltcp = { git = "https://github.com/smoltcp-rs/smoltcp", rev = "f7d39d7", default-features = false, features = [
   "socket",
   "async",
 ] }
 
-embassy-net-driver = { version = "0.2.0", path = "../embassy-net-driver" }
-embassy-time = { version = "0.3.0", path = "../embassy-time" }
-embassy-sync = { version = "0.5.0", path = "../embassy-sync" }
+embassy-net-driver = { version = "0.2.0" }
+embassy-time = { version = "0.3.0" }
+embassy-sync = { version = "0.5.0" }
 embedded-io-async = { version = "0.6.1" }
 
 managed = { version = "0.8.0", default-features = false, features = [ "map" ] }
